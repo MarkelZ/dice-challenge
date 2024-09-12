@@ -4,15 +4,15 @@ from z3 import Solver, Int, Or, If
 
 # ==== Constants ====
 # Number of sides of the dice
-N = 5
+N = 8
 
 # Probabilities
 ps = [i + 1 for i in range(N - 1)]
 ps = [0] + ps + [N] + ps[::-1]
 P = list(ps)
 
-# Range of the faces
-L = 0
+# Range of the number of pips
+L = 1
 U = 2*N
 
 
