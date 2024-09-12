@@ -35,15 +35,15 @@ find solutions using the [Z3 SMT solver](https://github.com/Z3Prover/z3).
 
 ### Constants
 
-Given two standard $N$-sided dice, the probability that their sum will add up to
-$n$ is denoted by $P_n/N^2$, with $n = 1, \dots, 2N$. For example, when $N = 8$,
+Given two standard $N$-sided dice, we write $P_n/N^2$ to refer to the probability 
+that their sum will add up to $n$, with $n = 1, \dots, 2N$. For example, when $N = 8$,
 we have $P_1 = 0$, $P_2 = 1$, $P_3 = 2$, $P_4 = 3$, and so on.
 
 ### Free variables
 
-* $x_i \in \mathbb{N}$, represents the value of the label on face number
+* $x_i \in \mathbb{N}$, represents the value of the label (num. of pips) on face number
   $i$ of dice 1, where $i = 1, \dots, N$.
-* $y_i \in \mathbb{N}$, represents the value of the label on face number
+* $y_i \in \mathbb{N}$, represents the value of the label (num. of pips) on face number
   $i$ of dice 2, where $i = 1, \dots, N$.
 
 ### Constraints
@@ -78,7 +78,7 @@ Notice that the right-hand side of the conjunction is $x_i \neq y^\star_i$ and
 
 ### Positive values
 
-When the faces are constrained to values between $1$ and $2N$, with $N = 8$, we
+When the number of pips is constrained to values between $1$ and $2N$, with $N = 8$, we
 get 4 solutions:
 ```
 ================================================================
@@ -103,7 +103,7 @@ Solution 4 is a standard D8.
 
 ### Allowing empty faces
 
-If we allow faces with 0 dots/pips, we get 11 solutions:
+If we allow faces with 0 pips, we get 11 solutions:
 
 ```
 ================================================================
