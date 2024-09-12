@@ -50,35 +50,29 @@ we have $P_1 = 0$, $P_2 = 1$, $P_3 = 2$, $P_4 = 3$, and so on.
 
 * Range of $x_i$ and $y_i$: 
   
-  for $i = 1, \dots, N,$
-  $$
-  1 \leq x_i \leq 2N \text{ and } 1 \leq y_i \leq 2N.
-  $$
+  for $i = 1, \dots, N$,  
+  $\quad 1 \leq x_i \leq 2N \text{ and } 1 \leq y_i \leq 2N.$
 
 * Probabilities match standard D8s: 
 
-  for $n = 1, \dots, N,$
-  $$
-  |\{x_i + y_j = n  \mid i, j = 1, \dots, 8\}| = P_n
-  $$
+  for $n = 1, \dots, N$,  
+  $\quad |\lbrace x_i + y_j = n  \mid i, j = 1, \dots, 8 \rbrace| = P_n.$
 
 * The faces are sorted in ascending order (to avoid repeats): 
 
-  for $i = 1, \dots, N - 1,$
-  $$
-  x_i \leq x_{i + 1} \text{ and } y_i \leq y_{i + 1}.
-  $$
+  for $i = 1, \dots, N - 1$,  
+  $\quad x_i \leq x_{i + 1} \text{ and } y_i \leq y_{i + 1}.$
 
 ### Finding new solutions
 
-Once we find $x^*_i$, $y^*_i$ that satisfy the constraints, we can include the
+Once we find $x^\star_i$ and $y^\star_i$ that satisfy the constraints, we can include the
 following additional constraint to disallow getting the same solution when
 running the solver again:
-$$
-(\bigvee_{i = 1, \dots N} x_i \neq x^*_i) \text{ and } (\bigvee_{i = 1, \dots N} x_i \neq y^*_i).
-$$
-Notice that the right-hand side of the conjunction is $x_i \neq y^*_i$ and
-**NOT** $y_i \neq y^*_i$.
+
+$(\bigvee_{i = 1, \dots N} x_i \neq x^\star_i) \text{ and } (\bigvee_{i = 1, \dots N} x_i \neq y^\star_i).$
+
+Notice that the right-hand side of the conjunction is $x_i \neq y^\star_i$ and
+**NOT** $y_i \neq y^\star_i$.
 
 ## Solutions
 
